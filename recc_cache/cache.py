@@ -2,7 +2,7 @@
 
 from typing import Optional, Tuple
 
-from recc_mq.redis.redis_cache import RedisCache
+from recc_cache.redis.redis_cache import RedisCache
 
 CACHE_PREFIX_ROOT = "recc:"
 CACHE_PREFIX_USER = "user"

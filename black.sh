@@ -32,6 +32,6 @@ ARGS=(
 print_message "black ${ARGS[*]}"
 
 "$ROOT_DIR/python" -m black "${ARGS[@]}" \
-    "$ROOT_DIR/recc_mq/" \
+    "$ROOT_DIR/recc_cache/" \
     "$ROOT_DIR/tester/" \
     "$ROOT_DIR/setup.py"

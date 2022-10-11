@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from recc_mq.cache import Cache
+from recc_cache.cache import Cache
 
 __version__ = "2.0.4"
 

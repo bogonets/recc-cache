@@ -25,6 +25,9 @@ VENV_PYTHON=$VENV_HOME/bin/python3
 
 if [[ ! -d "$VENV_HOME" ]]; then
     run_base_python -m venv "$VENV_HOME"
+    if [[ -x "$VENV_PYTHON" ]]; then
+        "$VENV_PYTHON" -m pip install -r "$ROOT_DIR/requirements.txt"
+    fi
 fi
 if [[ ! -x "$VENV_PYTHON" ]]; then
     echo "The venv's python executable could not be found." 1>&2

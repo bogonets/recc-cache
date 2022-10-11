@@ -4,20 +4,21 @@ from asyncio import sleep
 from datetime import datetime
 from unittest import IsolatedAsyncioTestCase, main, skipIf
 
-from recc_mq.redis.redis_cache import EXPIRE_ACCURACY_SECONDS, RedisCache
+from recc_cache.redis.redis_cache import EXPIRE_ACCURACY_SECONDS, RedisCache
 
 UID_PERFORMANCE_TEST_SKIP = True
 UID_PERFORMANCE_ITERATION = 10000
 
 
 class RedisCacheTestCase(IsolatedAsyncioTestCase):
-    async def asyncSetUp(self):
+    def setUp(self):
         self.host = "localhost"
         self.port = 6379
         self.pw = ""
         self.prefix = "tester:"
-
         self.cs = RedisCache(self.host, self.port, self.pw, self.prefix)
+
+    async def asyncSetUp(self):
         await self.cs.open()
         self.assertTrue(self.cs.is_open())
 
